@@ -1,27 +1,46 @@
 
-def f1():
+def Input_list():
     n = int(input('Enter the number of employees: '))
     lst=[]
     for i in range (n):
         e = employee()
-        e.inputEmployee():
-        def employee1():
-            name = input('Name: ')
-            salary = input('Salary: ')
-            age = input('Age: ')
-            print('Employee 1: ')
-            print(name)
-            print(salary)
-            print(age)
+        e.inputEmployee()
+        lst.append(e)
+    return lst
+    
+class employee:
+    def inputEmployee(self):
+        self.name = input('Name: ')
+        self.salary = input('Salary: ')
+        self.age = int(input('Age: '))
+    def printEmployee(self):
+        print('Employee')
+        print(self.name)
+        print(self.salary)
+        print(self.age)
 
-        def employee2(self):
-            name = input('Name: ')
-            salary = input('Salary: ')
-            age = input('Age: ')
-            print('Employee 2: ')
-            print(name)
-            print(salary)
-            print(age)
-                
+employeelist = Input_list()
+def f1():
+    print('f1----------------------------------------------------')
+    for x in employeelist:
+        x.printEmployee()
+    print('f2----------------------------------------------------')
+    employeelist.sort(key = lambda x : x.age, reverse = True)
+    for x in employeelist:
+        x.printEmployee()
+
+def f3():
+    print('f3-----------------------------------------------------')
+    lst = []
+    for i in employeelist:
+        if (i.age > 18):
+            lst.append(i)
+    lst.sort(key = lambda i : i.salary, reverse = True)
+    for i in lst:
+        i.printEmployee()
+        
 f1()
+f3()
+        
+
     
